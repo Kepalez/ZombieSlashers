@@ -38,11 +38,15 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterMover.cs" />
      <Compile Include="Assets\Scripts\equipmentSystem.cs" />
+     <Compile Include="Assets\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
+     <Compile Include="Assets\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\PlayerInputManager.cs" />
+     <Compile Include="Assets\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
      <Compile Include="Assets\Scripts\DamageDealer.cs" />
      <Compile Include="Assets\Scripts\firstPersonView.cs" />
      <Compile Include="Assets\Scripts\IInputManager.cs" />
+     <Compile Include="Assets\Scripts\RedCarpetTrap.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity 2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -667,8 +671,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -714,6 +724,9 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+        <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>C:\Users\kpach\OneDrive\Escritorio\Unity proyects\My project\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>

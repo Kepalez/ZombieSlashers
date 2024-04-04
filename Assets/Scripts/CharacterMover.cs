@@ -14,7 +14,7 @@ public class CharacterMover : MonoBehaviour{
     IInputManager inputManager;
     private bool isGrounded{
         get{
-            return Physics.Raycast(transform.position, -Vector3.up, 0.1f);
+            return Physics.Raycast(transform.position, -Vector3.up, 0.15f);
         }
     }
     void Awake(){

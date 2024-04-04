@@ -324,6 +324,9 @@
 -r:"C:/Users/kpach/OneDrive/Escritorio/Unity proyects/My project/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Users/kpach/OneDrive/Escritorio/Unity proyects/My project/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"C:/Users/kpach/OneDrive/Escritorio/Unity proyects/My project/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Extras.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Extras.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
@@ -351,6 +354,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/LowPolyDungeon/Demo Scenes/MouseCamLook.cs"
+"Assets/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
+"Assets/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
 "Assets/Scripts/CharacterMover.cs"
 "Assets/Scripts/DamageDealer.cs"
 "Assets/Scripts/Enemy.cs"
@@ -358,6 +364,7 @@
 "Assets/Scripts/firstPersonView.cs"
 "Assets/Scripts/IInputManager.cs"
 "Assets/Scripts/PlayerInputManager.cs"
+"Assets/Scripts/RedCarpetTrap.cs"
 -langversion:9.0
 
 /deterministic
