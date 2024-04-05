@@ -40,4 +40,15 @@ public class PlayerInputManager : MonoBehaviour,IInputManager
     void OnSwitchWeapon(){
         OnSwitchWeaponPressed();
     }
+
+    void recieveDamage(){
+        //Emit a noise?
+        GameObject.FindWithTag("GameController").GetComponent<GameManager>().DamagePlayer();
+    }
+
+    void OnTriggerEnter(Collider other){
+        if(other.tag == "EnemyAttack"){
+            recieveDamage();
+        }
+    }
 }
