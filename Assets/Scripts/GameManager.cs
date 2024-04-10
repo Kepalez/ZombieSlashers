@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -36,6 +37,9 @@ public class GameManager : MonoBehaviour
         minutes = (int)(totalTime/60);
         seconds = (int)totalTime-(minutes*60);
         timerText.text = minutes.ToString()+":"+(seconds < 10 ? "0"+seconds.ToString():seconds.ToString());
+
+        if(currentPlayerLives <= 0 || (minutes == 0 && seconds == 0)) SceneManager.LoadScene("GameOver");
+        if(scoredPoints == pointsGoal) SceneManager.LoadScene("YouWin");
     }
 
     public void ScorePoint(){
@@ -49,7 +53,7 @@ public class GameManager : MonoBehaviour
         int alpha = 255 - (255*currentPlayerLives/playerLives);
         damageRepersentation.color = new Color32(255,255,255,(byte)alpha);
         if(livesGroup.transform.childCount > 0){
-                Destroy(livesGroup.transform.GetChild(0).gameObject);
+            Destroy(livesGroup.transform.GetChild(0).gameObject);
         }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float aggroRange = 4f;
     [SerializeField] float visionAngle = 90f;
     [SerializeField] float playerAngle;
+    [SerializeField] GameObject hitVFX;
 
     GameObject damageDealer;
 
@@ -20,8 +20,19 @@ public class Enemy : MonoBehaviour
     GameObject player;
     Animator animator;
     NavMeshAgent agent;
-    float newDestinationCD = 0.5f;
+    float newDestinationCD = 4f;
     float newDestinationTime = 0f;
+
+    public Vector3 RandomNavmeshLocation(float radius) {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+            finalPosition = hit.position;            
+        }
+        return finalPosition;
+    }
 
     void Start(){
         player = GameObject.FindWithTag("Player");
@@ -34,16 +45,16 @@ public class Enemy : MonoBehaviour
     void Update(){
         animator.SetFloat("Speed",agent.velocity.magnitude / agent.speed);
         float dist = Vector3.Distance(player.transform.position,transform.position);
-        if(Time.time >= newDestinationTime && dist <= aggroRange && playerIsOnSight()){
-            newDestinationTime = Time.time+newDestinationCD;
+        if(dist <= aggroRange && playerIsOnSight()){
             agent.SetDestination(player.transform.position);
             transform.LookAt(player.transform.position);
-        }
-        if(Time.time >= attackTime && playerIsOnSight()){
-            if(dist <= attackRange){
+            if(dist <= attackRange && Time.time >= attackTime){
                 animator.SetTrigger("Attack");
                 attackTime = Time.time+attackCD;
             }
+        }else if(Time.time >= newDestinationTime){
+            newDestinationTime = Time.time+newDestinationCD;
+            agent.SetDestination(RandomNavmeshLocation(10f));
         }
     }
 
@@ -61,6 +72,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(float damageAmount){
+        GameObject hit = Instantiate(hitVFX,transform.position+transform.up*1.8f,Quaternion.identity);
+        Destroy(hit,3f);
         health -= damageAmount;
         animator.SetTrigger("Damage");
         if(health <= 0){

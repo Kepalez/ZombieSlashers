@@ -1768,6 +1768,7 @@ MonoBehaviour:
   aggroRange: 10
   visionAngle: 90
   playerAngle: 0
+  hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
 --- !u!195 &5506936926719837342
 NavMeshAgent:
   m_ObjectHideFlags: 0

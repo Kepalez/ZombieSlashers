@@ -7,7 +7,7 @@ public class Interactor : MonoBehaviour{
     void Update(){
         if(Input.GetKeyDown(KeyCode.E)){
             Ray r = new Ray(interactionSource.position,interactionSource.forward);
-            if(Physics.Raycast(r,out RaycastHit hitInfo,interactionRange)){
+            if(Physics.Raycast(r,out RaycastHit hitInfo,interactionRange) && !GetComponent<Animator>().GetBool("Armed")){
                 if(hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)){
                     interactObj.Interact();
                 }

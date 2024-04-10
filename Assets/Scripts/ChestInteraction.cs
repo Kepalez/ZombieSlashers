@@ -10,6 +10,7 @@ public class ChestInteraction : MonoBehaviour,IInteractable
     }
     public void Interact()
     {
+        if(GetComponent<Animator>().GetBool("Opened")) return;
         print("Opened chest");
         GetComponent<Animator>().SetBool("Opened",true);
         GameObject.FindWithTag("GameController").GetComponent<GameManager>().ScorePoint();

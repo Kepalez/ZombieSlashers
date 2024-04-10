@@ -33,6 +33,7 @@ public class PlayerInputManager : MonoBehaviour,IInputManager
         OnJumpPressed();
     }
     void OnHit(){
+        if(!GetComponent<Animator>().GetBool("Armed")) return;
         if(Time.time < _attackTime) return;
         _attackTime = Time.time+attackCooldown;
         OnHitPressed();
